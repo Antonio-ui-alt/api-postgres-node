@@ -1,0 +1,13 @@
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  // Necesario para algunos proveedores de PostgreSQL administrado:
+  // ssl: { rejectUnauthorized: false },
+});
+
+pool.on('error', (error) => {
+  console.error('Error inesperado en el pool de PostgreSQL:', error);
+});
+
+module.exports = pool;
