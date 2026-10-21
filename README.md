@@ -23,5 +23,11 @@ El archivo `render.yaml` define la API y una base de datos PostgreSQL administra
 - `POST /api/tareas` — crea una tarea; JSON: `{ "titulo": "Estudiar Node" }`
 - `PUT /api/tareas/:id` — actualiza título y estado; JSON: `{ "titulo": "Estudiar Node", "completada": true }`
 - `DELETE /api/tareas/:id` — elimina una tarea
+- `GET /api/peliculas` — lista películas para consumir desde n8n
+- `GET /api/peliculas?genero=animación` — filtra por género
+- `GET /api/peliculas/:id` — obtiene una película
+- `POST /api/peliculas` — agrega una película con título, director, año y género
+
+La tabla de películas se crea automáticamente y carga cinco registros de ejemplo. Para la práctica de n8n, usa un nodo **HTTP Request** con método `GET` y URL `https://api-postgres-node.onrender.com/api/peliculas`.
 
 Las consultas SQL están parametrizadas. Las credenciales actuales son solo para desarrollo local; no las uses en producción.

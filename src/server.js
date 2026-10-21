@@ -4,6 +4,7 @@ const path = require('node:path');
 const express = require('express');
 const pool = require('./db/pool');
 const tareasRouter = require('./routes/tareas');
+const peliculasRouter = require('./routes/peliculas');
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.get('/', (_req, res) => {
     endpoints: {
       salud: '/api/health',
       tareas: '/api/tareas',
+      peliculas: '/api/peliculas',
     },
   });
 });
@@ -32,6 +34,7 @@ app.get('/api/health', async (_req, res) => {
   }
 });
 app.use('/api/tareas', tareasRouter);
+app.use('/api/peliculas', peliculasRouter);
 
 app.use((error, _req, res, _next) => {
   console.error(error);
