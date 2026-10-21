@@ -15,5 +15,5 @@ services:
 databases:
   - name: api-postgres-db
     plan: free
-    databaseName: postgres
-    user: postgres
+    databaseName: apidb
+    user: api_user
