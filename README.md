@@ -11,6 +11,10 @@ API de tareas con Express y `pg`. Usa la imagen `postgres:17` y conserva los dat
 
 La API queda en `http://localhost:3000`; Docker PostgreSQL escucha en `localhost:5433`.
 
+## Desplegar en Render
+
+El archivo `render.yaml` define la API y una base de datos PostgreSQL administrada. Conecta el repositorio de GitHub a Render como Blueprint y Render aplicará esa configuración. El plan gratuito de PostgreSQL de Render vence después de 30 días y elimina la base si no se actualiza; úsalo solo para una demo temporal.
+
 ## Endpoints
 
 - `GET /api/health` — estado de la API y PostgreSQL
