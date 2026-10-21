@@ -8,6 +8,16 @@ const tareasRouter = require('./routes/tareas');
 const app = express();
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.json({
+    mensaje: 'API de tareas con Node.js y PostgreSQL',
+    endpoints: {
+      salud: '/api/health',
+      tareas: '/api/tareas',
+    },
+  });
+});
+
 app.get('/api/health', async (_req, res) => {
   try {
     await pool.query('SELECT 1');
